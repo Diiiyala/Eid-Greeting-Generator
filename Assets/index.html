@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Eid Greeting Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: white;
+            overflow: hidden;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(270deg, #5e2b97, #7b3fe4, #4a1f7a);
+            background-size: 600% 600%;
+            animation: gradientMove 15s ease infinite;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @keyframes gradientMove {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+
+        @keyframes starFloat {
+            0% { transform: translateY(0) scale(1); }
+            100% { transform: translateY(-30px) scale(1.1); }
+        }
+
+        @keyframes twinkle {
+            from { opacity: 0.3; }
+            to { opacity: 1; }
+        }
+
+        .star {
+            position: absolute;
+            color: gold;
+            pointer-events: none;
+            z-index: 0;
+            animation: twinkle 2s infinite alternate, starFloat 5s infinite alternate ease-in-out;
+        }
+
+        #main-content {
+            z-index: 10;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        .title-ar { font-size: 38px; direction: rtl; margin-bottom: 10px; text-shadow: 2px 2px 10px rgba(0,0,0,0.3); }
+        .title-en { font-size: 18px; margin-bottom: 30px; opacity: 0.8; letter-spacing: 1px; }
+
+        button#main-btn {
+            padding: 18px 35px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            background: white;
+            color: #4a1f7a;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            outline: none;
+        }
+
+        button#main-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.3);
+            background: #fdfdfd;
+        }
+
+        #greeting-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 25px;
+            padding: 30px;
+            margin-top: 40px;
+            display: none;
+            border: 1px solid rgba(255,255,255,0.2);
+            animation: fadeIn 0.8s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .ar { direction: rtl; font-size: 26px; margin-bottom: 20px; line-height: 1.6; }
+        .en { font-size: 19px; line-height: 1.4; opacity: 0.9; font-style: italic; }
+
+        .copy-btn {
+            margin-top: 20px;
+            padding: 10px 25px;
+            font-size: 14px;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+            outline: none;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.35);
+            border-color: white;
+        }
+
+        .footer-credit {
+            position: fixed;
+            bottom: 15px;
+            left: 0;
+            width: 100%;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            letter-spacing: 0.5px;
+            z-index: 20;
+            pointer-events: none;
+        }
+
+        @media (max-width: 600px) {
+            .title-ar { font-size: 28px; }
+            .title-en { font-size: 14px; margin-bottom: 20px; }
+            button#main-btn { padding: 15px 25px; font-size: 16px; }
+            .ar { font-size: 20px; margin-bottom: 15px; }
+            .en { font-size: 16px; }
+            #greeting-container { padding: 20px; }
+            .footer-credit { font-size: 11px; }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="main-content">
+    <div class="title-ar">لنشارك فرحة العيد معاً</div>
+    <div class="title-en">Let’s share the joy of Eid together</div>
+
+    <button id="main-btn" onclick="generateGreeting()">
+        اضغط للحصول على تهنئة عشوائية <br>
+        Click for a random greeting
+    </button>
+
+    <div id="greeting-container">
+        <div id="greeting"></div>
+        <button class="copy-btn" id="copy-btn" onclick="copyGreeting()">
+            نسخ التهنئة | Copy Text
+        </button>
+    </div>
+</div>
+
+<footer class="footer-credit">
+    Developed by Diyala Alturki | تم التطوير بواسطة ديالى التركي
+</footer>
+
+<script>
+const greetings = [
+    { ar:"أدام الله عليكم الأعياد دهورًا، وألبسكم من تقواه نورًا، عيدكم مبارك.", en:"May Allah grant you many years of Eids and clothe you with the light of His piety. Blessed Eid to you."},
+    { ar:"كل عام وأنتم بألف خير، وعيد فطر مبارك، أسأل الله أن يعيده علينا وعليكم باليمن والبركات.", en:"Wishing you goodness every year. Blessed Eid al-Fitr. May Allah bring it back to us and to you with prosperity and blessings." },
+    { ar:"عيد فطر مبارك، أسأل الله أن يملأ أيامكم فرحًا وسرورًا، وأن يتقبل منكم الصيام والقيام، ويجعل حياتكم كلها أعيادًا بالطاعة والرضا.", en:"Blessed Eid al-Fitr. I ask Allah to fill your days with joy and happiness, accept your fasting and prayers, and make your life full of blessed moments in His obedience and contentment." },
+    { ar:"أهنئكم بحلول عيد الفطر المبارك، وأسأل الله أن يكتب لكم فيه الفرح والطمأنينة، وأن يتقبل أعمالكم ويحقق لكم كل ما تتمنون.", en:"I congratulate you on the blessed Eid al-Fitr. May Allah grant you joy and peace in it, accept your deeds, and fulfill all that you wish for." },
+    { ar:"عيدكم مبارك، جعل الله أيامكم أفراحًا، ورزقكم من الخير ما يملأ حياتكم بركة وسعادة.", en:"Blessed Eid. May Allah make your days full of joy and grant you goodness that fills your life with blessings and happiness." },
+    { ar:"عيدكم سعيد ومبارك، أسأل الله أن يتقبل طاعاتكم، ويجعل الفرح يسكن قلوبكم، وأن يكتب لكم الخير في كل خطوة.", en:"Happy and blessed Eid. May Allah accept your acts of worship, fill your hearts with joy, and write goodness for you in every step." },
+    { ar:"كل عام وأنتم بخير بمناسبة عيد الفطر، جعل الله هذا العيد فاتحة خير عليكم، وملأ قلوبكم راحة وسرورًا، وتقبل منكم صالح الأعمال.", en:"Wishing you well every year on the occasion of Eid al-Fitr. May this Eid be the beginning of goodness for you, fill your hearts with peace and joy, and accept your righteous deeds." },
+    { ar:"مع قدوم العيد أبعث لكم أصدق التهاني، وأسأل الله أن يجعل أيامكم أفراحًا متواصلة، وأن يرزقكم الرضا والسعادة.", en:"With the arrival of Eid, I send you my sincere congratulations. May Allah make your days full of continuous joy and grant you contentment and happiness." },
+    { ar:"عيدكم مبارك، جعل الله هذا العيد بداية خير لكم، وملأ حياتكم نورًا وبركة وراحة بال.", en:"Blessed Eid. May Allah make this Eid the beginning of goodness for you and fill your life with light, blessings, and peace of mind." }
+];
+
+    let lastIndex = -1; 
+
+    function generateGreeting() {
+        confetti({
+            particleCount: 150,
+            spread: 70,
+            origin: { y: 0.6 },
+            colors: ['#ffffff', '#ffd700', '#7b3fe4']
+        });
+
+        let randomIndex;
+        do {
+            randomIndex = Math.floor(Math.random() * greetings.length);
+        } while (randomIndex === lastIndex); 
+        
+        lastIndex = randomIndex; 
+
+        const container = document.getElementById("greeting-container");
+        const display = document.getElementById("greeting");
+
+        container.style.display = "block";
+        display.style.opacity = 0; 
+        
+        setTimeout(() => {
+            display.innerHTML = `
+                <div class='ar'>${greetings[randomIndex].ar}</div>
+                <div class='en'>${greetings[randomIndex].en}</div>
+            `;
+            display.style.opacity = 1;
+            display.style.transition = "opacity 0.3s";
+        }, 100);
+    }
+
+    function copyGreeting() {
+        const greetingDiv = document.getElementById("greeting");
+        const text = greetingDiv.innerText;
+        
+        navigator.clipboard.writeText(text).then(() => {
+            const btn = document.getElementById("copy-btn");
+            const originalText = btn.innerText;
+            btn.innerText = "تم النسخ! | Copied! ✅";
+            btn.style.borderColor = "#ffd700";
+            
+            setTimeout(() => {
+                btn.innerText = originalText;
+                btn.style.borderColor = "rgba(255, 255, 255, 0.4)";
+            }, 2000);
+        }).catch(err => {
+            console.error('فشل النسخ: ', err);
+        });
+    }
+
+    for (let i = 0; i < 80; i++) {
+        let star = document.createElement("div");
+        star.className = "star";
+        star.innerHTML = "★";
+        star.style.top = Math.random() * 100 + "vh";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.animationDelay = Math.random() * 5 + "s";
+        star.style.fontSize = (Math.random() * 10 + 10) + "px";
+        document.body.appendChild(star);
+    }
+</script>
+
+</body>
+</html>
