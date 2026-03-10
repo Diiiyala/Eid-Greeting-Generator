@@ -7,14 +7,16 @@ A simple and fun web app that spreads joy during Eid by generating random greeti
 
 🌐 **Live Demo / تجربة مباشرة:** [https://eid-greeting-by-diyala.netlify.app](https://eid-greeting-by-diyala.netlify.app)
 
+
 ---
 
 ## 🌟 Preview | معاينة
 
 
-![Homepage Screenshot](Assets\Screenshot-1.jpg)
+![Homepage Screenshot](Assets/Screenshot-1.jpg)
 
-![Features Screenshot](Assets\Screenshot-2.jpg)
+
+![Features Screenshot](Assets/Screenshot-2.jpg)
 
 ---
 
