@@ -2,7 +2,7 @@
 
 A simple web project that generates random Eid greetings in Arabic and English.
 
-View the full code on GitHub: [here](ndex.html)
+View the full code on GitHub: [here](index.html)
 
 ## Features
 
