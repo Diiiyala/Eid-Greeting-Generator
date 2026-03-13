@@ -5,7 +5,7 @@ A simple and fun web app that spreads joy during Eid by generating random greeti
 تطبيق ويب بسيط وممتع ينشر فرحة العيد من خلال عرض تهاني عشوائية بالعربية والإنجليزية.
 
 
-🌐 **Live Demo / تجربة مباشرة:** [https://eid-greeting-by-diyala.netlify.app](https://eid-greeting-by-diyala.netlify.app)
+🌐 **Live Demo / تجربة مباشرة:** [https://eid-greeting-by-diyala-alturki.netlify.app](https://eid-greeting-by-diyala-alturki.netlify.app)
 
 
 ---
