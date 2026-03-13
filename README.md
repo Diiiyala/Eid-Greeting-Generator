@@ -13,10 +13,7 @@ A simple and fun web app that spreads joy during Eid by generating random greeti
 ## 🌟 Preview | معاينة
 
 
-![Homepage Screenshot](Assets/Screenshot-1.jpg)
-
-
-![Features Screenshot](Assets/Screenshot-2.jpg)
+![Homepage Screenshot](Assets/Picture.jpg)
 
 ---
 
