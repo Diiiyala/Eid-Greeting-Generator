@@ -10,50 +10,57 @@ A simple and fun web app that spreads joy during Eid by generating random greeti
 
 ---
 
-## 🌟 Preview | معاينة
+## Preview | معاينة
 
 
 ![Homepage Screenshot](Assets/Picture.jpg)
 
 ---
 
-## 🎁 Features | المميزات
 
-- **Random Greetings** – Each click shows a new Eid message in Arabic and English.  
+## Features | المميزات
 
-  **تهاني عشوائية** – كل ضغطة تعرض رسالة عيد جديدة بالعربية والإنجليزية.
+- **Random Eid Greetings** – Generates a random Eid greeting in Arabic and English each time the button is clicked.  
+  **تهاني عيد عشوائية** – يتم عرض تهنئة عيد عشوائية بالعربية والإنجليزية عند الضغط على الزر.
 
-- **Copy Button** – Easily copy the greeting to share with friends and family.  
+- **Button Click Sound** – Plays a sound effect when the user clicks the button to start the greeting.  
+  **صوت عند الضغط** – يتم تشغيل صوت عند الضغط على الزر لبدء التهنئة.
 
-  **زر النسخ** – انسخ التهنئة بسهولة لمشاركتها مع الأصدقاء والعائلة.
-- **Confetti Animation** – Adds festive fun when a greeting appears.  
+- **Animated Envelope Reveal** – A stylish animated envelope rises and opens to reveal the greeting message.  
+  **أنيميشن ظرف الرسالة** – يظهر ظرف متحرك يصعد ويفتح ليكشف رسالة التهنئة.
 
-  **احتفالية كونفيتي** – تأثير مرئي ممتع عند ظهور التهنئة.
+- **Confetti Celebration** – Confetti animation appears when the greeting is generated to create a festive feeling.  
+  **احتفالية الكونفيتي** – يظهر تأثير الكونفيتي عند عرض التهنئة لإضفاء جو احتفالي.
 
-- **Twinkling Stars** – Background stars float and twinkle for a festive mood.  
+- **Animated Colorful Background Circles** – Floating colorful circles animate in the background for a festive atmosphere.  
+  **دوائر ملوّنة متحركة** – دوائر ملوّنة متحركة في الخلفية تضيف أجواء احتفالية.
 
-  **نجوم متلألئة** – نجوم متحركة في الخلفية تضيف جو العيد.
+- **Share Greeting as Image** – Users can share the greeting as an image using the device share feature or download it automatically.  
+  **مشاركة التهنئة كصورة** – يمكن مشاركة التهنئة كصورة عبر ميزة المشاركة في الجهاز أو تحميلها تلقائياً.
 
-- **Responsive Design** – Works beautifully on both mobile and desktop.  
+- **Smooth Animations & Transitions** – Multiple CSS animations enhance the user experience.  
+  **حركات وانتقالات سلسة** – مجموعة من الأنيميشن في CSS لتحسين تجربة المستخدم.
 
-  **تصميم متجاوب** – يعمل بشكل ممتاز على الجوال والكمبيوتر.
+- **Responsive Design** – Fully responsive layout optimized for mobile and desktop.  
+  **تصميم متجاوب** – تصميم متوافق مع الجوال وأجهزة الكمبيوتر.
 
-- **Social Links in Footer** – Connect with the developer via LinkedIn, GitHub, or Email.  
-
-  **روابط التواصل في الفوتر** – تواصل مع المطورة عبر لينكدإن أو جيت هاب أو البريد الإلكتروني.
-
----
-
-## 💡 How it Works | كيف يعمل
-
-1. **Click the main button** to get a random Eid greeting.  
-   اضغط الزر الرئيسي للحصول على تهنئة عشوائية.
-
-2. **Greeting appears with animations** like confetti and twinkling stars.  
-   تظهر التهنئة مع تأثيرات مرئية مثل الكونفيتي والنجوم المتلألئة.
-
-3. **Copy your greeting** using the button below for easy sharing.  
-   انسخ التهنئة باستخدام الزر الموجود أسفلها لمشاركتها بسهولة.
+- **Social Links Footer** – Footer includes links to LinkedIn, GitHub, and Email.  
+  **روابط التواصل في الفوتر** – روابط للتواصل عبر لينكدإن وجيت هاب والبريد الإلكتروني.
 
 ---
 
+## How it Works | كيف يعمل
+
+1. **Click the main button** to start the greeting experience.  
+   **اضغط الزر الرئيسي** لبدء تجربة التهنئة.
+
+2. **A festive sound plays and confetti appears** to celebrate the moment.  
+   **يتم تشغيل صوت احتفالي ويظهر تأثير الكونفيتي** لإضافة أجواء العيد.
+
+3. **An animated envelope rises and opens** to reveal a random Eid greeting in Arabic and English.  
+   **يظهر ظرف متحرك يصعد ويفتح** ليكشف تهنئة عيد عشوائية بالعربية والإنجليزية.
+
+4. **Click the share button** to generate an image of the greeting and share it or download it.  
+   **اضغط زر المشاركة** لإنشاء صورة للتهنئة ومشاركتها أو تحميلها.
+
+---
