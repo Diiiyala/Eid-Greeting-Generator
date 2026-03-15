@@ -21,6 +21,8 @@ Loads external libraries for confetti animation, image capture, icons, and Arabi
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Reem+Kufi:wght@400;700&display=swap" rel="stylesheet">
 ```
+
+---
 ## CSS Explaination
 
 ### Base Styles & Body Setup
@@ -398,6 +400,7 @@ Applies responsive design for screens smaller than 600px. Adjusts font sizes, bu
 }
 ```
 
+---
 ## HTML Explaination
 
 ### Body & Audio
@@ -506,6 +509,7 @@ Contains developer credits and social media links.
 </footer>
 ```
 
+---
 ## JavaScript Explaination
 
 ### Greetings Data
