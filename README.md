@@ -39,7 +39,7 @@ A simple and fun web app that spreads joy during Eid by generating random greeti
   **مشاركة التهنئة كصورة** – يمكن مشاركة التهنئة كصورة عبر ميزة المشاركة في الجهاز أو تحميلها تلقائياً.
 
 - **Smooth Animations & Transitions** – Multiple CSS animations enhance the user experience.  
-  **حركات وانتقالات سلسة** – مجموعة من الأنيميشن في CSS لتحسين تجربة المستخدم.
+  **حركات وانتقالات سلسة** – مجموعة من الأنيميشن لتحسين تجربة المستخدم.
 
 - **Responsive Design** – Fully responsive layout optimized for mobile and desktop.  
   **تصميم متجاوب** – تصميم متوافق مع الجوال وأجهزة الكمبيوتر.
